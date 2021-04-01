@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     public void chooseImage(View objectView){
         try {
             Intent objectIntent = new Intent();
+            objectIntent.setType("image/*");
             objectIntent.setAction(Intent.ACTION_GET_CONTENT);
             startActivityForResult(objectIntent, PICK_Image_Request);
 

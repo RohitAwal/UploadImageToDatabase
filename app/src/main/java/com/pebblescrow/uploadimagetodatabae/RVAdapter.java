@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.RVViewHolderClass> {
 
 
-    ArrayList<ModelClass> onjectModelClassList;
+    ArrayList<ModelClass> objectModelClassList;
 
     public RVAdapter(ArrayList<ModelClass> onjectModelClassList) {
-        this.onjectModelClassList = onjectModelClassList;
+        this.objectModelClassList = onjectModelClassList;
     }
 
     @NonNull
@@ -29,13 +29,14 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.RVViewHolderClass>
 
     @Override
     public void onBindViewHolder(@NonNull RVViewHolderClass rvViewHolderClass, int i) {
-        ModelClass objectModelClass = onjectModelClassList.get(i);
+        ModelClass objectModelClass = objectModelClassList.get(i);
         rvViewHolderClass.imageNameTV.setText(objectModelClass.getImageName());
+        rvViewHolderClass.objectImageView.setImageBitmap(objectModelClass.getImage());
     }
 
     @Override
     public int getItemCount() {
-        return onjectModelClassList.size();
+        return objectModelClassList.size();
     }
 
     public static class RVViewHolderClass extends RecyclerView.ViewHolder
